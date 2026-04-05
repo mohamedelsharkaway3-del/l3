@@ -14,6 +14,8 @@
   --wa:#25D366;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{overflow-x:hidden;}
+body{overflow-x:hidden;}
 body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;padding-bottom:96px;}
 
 /* HEADER */
@@ -44,8 +46,10 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--ink);min-
 .tag{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:5px 13px;font-size:11.5px;font-weight:700;color:rgba(255,255,255,.88);display:flex;align-items:center;gap:5px;}
 .td{width:6px;height:6px;border-radius:50%;background:var(--accl);flex-shrink:0;}
 
+
+
 /* STICKY BAR */
-.sbar{position:sticky;top:0;z-index:200;background:var(--g2);padding:10px 14px;display:flex;gap:9px;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,.35);border-bottom:1px solid rgba(255,255,255,.06);}
+.sbar{background:var(--g2);padding:10px 14px;display:flex;gap:9px;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,.35);border-bottom:1px solid rgba(255,255,255,.06);}
 .sbox{flex:1;display:flex;align-items:center;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.13);border-radius:12px;overflow:hidden;transition:border-color .2s;}
 .sbox:focus-within{border-color:var(--acc);}
 .sbox input{flex:1;background:transparent;border:none;outline:none;padding:9px 13px;color:var(--white);font-family:'Tajawal',sans-serif;font-size:14px;font-weight:500;direction:rtl;}
@@ -58,7 +62,6 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--ink);min-
   background:var(--g2);
   padding:0 14px 12px;
   border-bottom:1px solid rgba(255,255,255,.06);
-  position:sticky;top:52px;z-index:199;
 }
 .size-tabs{
   display:flex;gap:7px;overflow-x:auto;
@@ -106,24 +109,25 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--ink);min-
 
 /* LIST */
 .pw{padding:14px 14px 0;}
-.lhd{display:grid;grid-template-columns:1fr 70px 80px 94px;background:linear-gradient(135deg,var(--g2),var(--g4));border-radius:14px 14px 0 0;}
+.lhd{display:grid;grid-template-columns:1fr 62px 72px 84px;background:linear-gradient(135deg,var(--g2),var(--g4));border-radius:14px 14px 0 0;}
 .lhd-c{padding:10px 7px;font-size:10px;font-weight:800;color:var(--accl);text-align:center;letter-spacing:.3px;border-left:1px solid rgba(255,255,255,.09);line-height:1.4;}
 .lhd-c:first-child{text-align:right;padding-right:14px;border-left:none;color:var(--white);}
 
 .lbody{background:var(--white);border-radius:0 0 14px 14px;overflow:hidden;box-shadow:0 8px 28px rgba(13,61,34,.12);}
-.pr{display:grid;grid-template-columns:1fr 70px 80px 94px;border-bottom:1px solid #e8f5ee;transition:background .1s;}
+.pr{display:grid;grid-template-columns:1fr 62px 72px 84px;border-bottom:1px solid #e8f5ee;transition:background .1s;}
 .pr:last-child{border-bottom:none;}
 .pr:nth-child(even){background:#f7fdf9;}
 .pr:active{background:#ddf0e6;}
 .pr.hidden{display:none;}
 
-.pn{padding:10px 12px 10px 8px;display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--mid);border-left:1px solid #e8f5ee;}
+.pn{min-width:0;overflow:hidden;padding:10px 12px 10px 8px;display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--mid);border-left:1px solid #e8f5ee;}
+.pn-txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0;}
 .pnum{width:20px;height:20px;border-radius:5px;background:#d8f0e2;color:var(--lite);font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 
-.pc,.ph,.pf{padding:8px 5px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;border-left:1px solid #e8f5ee;}
-.pc{background:#eef7f2;}
-.ph{background:#e6f5ec;}
-.pf{background:#d8f0e4;}
+.pc,.ph,.pf{min-width:0;padding:8px 5px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;border-left:1px solid #e8f5ee;}
+.pc{min-width:0;background:#eef7f2;}
+.ph{min-width:0;background:#e6f5ec;}
+.pf{min-width:0;background:#d8f0e4;}
 
 .pv{font-size:12.5px;font-weight:900;line-height:1;}
 .pl{font-size:9px;font-weight:600;margin-top:2px;color:var(--lite);}
@@ -181,7 +185,7 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--ink);min-
   .pw,.tw,.ctaw,.ftr{max-width:680px;margin-left:auto;margin-right:auto;}
   .summ,.quality-strip{max-width:680px;margin-left:auto;margin-right:auto;}
   .size-tabs-wrap{padding:0 calc(50% - 340px) 12px;}
-  .lhd,.pr{grid-template-columns:1fr 80px 90px 108px;}
+  .lhd,.pr{grid-template-columns:1fr 80px 92px 108px;}
   .tgrid{grid-template-columns:repeat(3,1fr);}
 }
 </style>
@@ -208,7 +212,8 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--ink);min-
   </div>
 </div>
 
-<!-- STICKY SEARCH -->
+<!-- STICKY TOP -->
+<div id="fixedTop" style="position:-webkit-sticky;position:sticky;top:0;z-index:300;will-change:transform;">
 <div class="sbar">
   <div class="sbox">
     <input type="text" id="srch" placeholder="ابحث عن زيت..." oninput="doFilter()">
@@ -247,6 +252,7 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--ink);min-
     <div class="ci-item">💧 سعر الزجاجة محسوب من سعر اللتر</div>
   </div>
 </div>
+</div><!-- /fixed-top -->
 
 <!-- TABLE HEAD -->
 <div class="pw">
@@ -395,7 +401,7 @@ function render(data){
     const d = document.createElement('div');
     d.className = 'pr';
     d.innerHTML = `
-      <div class="pn"><div class="pnum">${i+1}</div>${name}</div>
+      <div class="pn"><div class="pnum">${i+1}</div><span class="pn-txt">${name}</span></div>
       <div class="pc"><div class="pv">${fmt(bp)}</div><div class="pl">جنيه</div></div>
       <div class="ph"><div class="pv">${fmt(half)}</div><div class="pl">جنيه</div></div>
       <div class="pf"><div class="pv">${fmt(full)}</div><div class="pl">جنيه</div></div>`;
@@ -420,6 +426,7 @@ function selectSize(idx){
 }
 
 render(P);
+
 </script>
 </body>
 </html>
